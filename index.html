@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Explore the East Fork Lewis River</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Trade+Winds" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+  <header class="site-header">
+
+    <h1 class="site-h1">Explore the East Fork Lewis&nbsp;River</h1>
+
+
+    <!-- filter controls -->
+    <form class="map-filters" data-bind="foreach: categories">
+      <div class="input-label-group">
+        <input type="checkbox" data-bind="checked: $root.selectedCategories, checkedValue: $data.name, attr: {id: $data.class}, click: $root.filterLocations">
+        <label data-bind="text: $data.name, attr: {for: $data.class, class: $data.class}"></label>
+      </div>
+    </form>
+
+
+</header>
+
+
+
+
+    <!-- list of locations -->
+    <!-- <ul data-bind="foreach: visibleLocations">
+        <li data-bind="text: $data.title, click: highlightMarker"></li>
+    </ul> -->
+
+    <div id="map"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="app.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmrqvE0MCXgLXc_ILYaRbdPOK1Pz_ApnE&callback=initMap" async defer onerror="mapError()">
+</script>
+
+</body>
+
+</html>
